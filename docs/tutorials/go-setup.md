@@ -10,13 +10,13 @@ The following is necessary for this tutorial:
 * **Visual Studio Code**: We will use this as our code editor.
 * **Docker**: This is what we use to run our development container.
 * **VS Code Dev Container Extension**: A VS Code plugin that allows us to use dev containers.
-* **Git**: Git is the standard for version control which is necessary for the project.
+* **Git**: Git is the version control which is necessary for the project.
 
 <br>
 
-## **Step 1**: Create Project Directory:
+## **Step 1**: Create Project Directory: :rocket:
 
-Create your project directory and go to it.
+Open a terminal and reate your project directory, and go into it with the following commands.
 
 ``` bash
 mkdir go-project
@@ -27,13 +27,43 @@ cd go-project
 
 ## **Step 2**: Initialize Git Repo:
 
-'git init' is the command that sets up git for your project.
+'git init' is the command you will type in the terminal that sets up git repository for your project.
 
 ``` bash
 git init
 ```
 
-Then, on the github website, create a repository of the same name. 
+Create a README file by typing this in the terminal:
+
+``` bash
+echo "# Go Dev Container" > README.md
+git add README.md
+git commit -m "Initial commit with README"
+```
+
+The next step is to navigate to github.com and login with your username and password. Once logged in, you should see a green "New" 
+button next to "Top Repositories". Click the "New" button. 
+
+You only need to fill in these details, do not do anything else:
+
+- Repository Name: go-dev-container
+- Description: "Setting up a go-dev-container"
+- Visibility: Public
+
+Click create repository, and add the GitHub repository by typing this in the same terminal you opened earlier
+
+``` bash
+git remote add origin https://github.com/<your-username>/go-dev-container.git
+``` 
+Insert your GitHub username where it says (your-username).
+
+Check your default branch name with the subcommand "git branch" in the terminal. If the result is not *main, rename it to main with the following command: git branch -M main.
+
+Push your local commits to the GitHub repository:
+
+```bash
+git push --set-upstream origin main
+```
 
 <br>
 
@@ -42,6 +72,8 @@ Then, on the github website, create a repository of the same name.
 The dev container allows us to have a consistent dev environment with all the necessary dependencies for our project.
 To do this, follow these steps:
 
+* Open VS Code
+* Click File > Open > go-dev-container
 * Make a folder called .devcontainer in your main project directory (go-project)
 * Create a file called devcontainer.json inside the .devcontainer folder
 * Add the following code to the devcontainer.json file:
@@ -80,7 +112,7 @@ Follow these steps to open the project in our new dev container:
 
 ## **Step 5**: Make a simple program
 
-First, ensure that you have Go with the following code (in terminal):
+First, ensure that you have Go with the following code (in VS Code terminal):
 
 ``` bash
 go version
@@ -109,7 +141,7 @@ func main() {
 }
 ```
 
-You now have a simple Go program! Using the Println function from fmt (which we imported above) we were able to write a function in the function main (from the main package) that will print "Hello COMP423" when we run the file. 
+You now have a simple Go program! Using the Println function from fmt (which we imported above), we are able to write a function in the function main (from the main package) that will print "Hello COMP423" when we run the file. 
 
 <br>
 
@@ -123,12 +155,14 @@ go run main.go
 
 This should print "Hello COMP423" into your terminal. If you see this, you successfully ran your program!
 
-You should also try running your program using the build command. 'go build' makes a binary that we can execute many times, while 'go run' compiles and runs the program in a single step.
+!!! note
 
-``` bash
-go build -o hello_comp
-./hello_comp
-```
+    You should also try running your program using the build command. 'go build' makes a binary that we can execute many times, while 'go run' compiles and runs the program in a single step.
+
+    ``` bash
+    go build -o hello_comp
+    ./hello_comp
+    ```
 
 ## **Step 7**: Commit changes
 
@@ -142,7 +176,6 @@ git commit -m "First commit, added our programming and set up dev container."
 You then must push your changes to github to update the repository on there:
 
 ``` bash
-git remote add origin https://github.com/<your-username>/go-project.git
 git push -u origin main
 ```
 
@@ -158,4 +191,4 @@ Let's look over what you did:
 * You made and ran a Go program
 * You updated your github repository from the command line
 
-Now you can further develop your skills and create cool projects!
+Now you can further develop your skills and create cool projects! :smile:
