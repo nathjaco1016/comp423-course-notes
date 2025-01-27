@@ -96,7 +96,8 @@ To do this, follow these steps:
 }
 ```
 
-The 'image' uses the base microsoft image for go. This includes every dependency we need in our dev container.
+!!! Image
+    The 'image' uses the base microsoft image for Go. This includes every dependency we need in our dev container.
 
 <br>
 
