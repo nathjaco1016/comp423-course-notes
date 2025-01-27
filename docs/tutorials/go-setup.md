@@ -88,7 +88,7 @@ go version
 
 This should output an up to date Go version.
 
-Then, you need to make the Go module. This code uses the 'go mod' command to make the go.mod file, which tracks dependencies for the project. Run this code in the terminal:
+Then, you need to make the Go module. This code uses the 'go mod' command to make the 'go.mod' file, which tracks dependencies for the project. Run this code in the terminal:
 
 ``` bash
 go mod init github.com/<your-username>/go-project
@@ -123,7 +123,7 @@ go run main.go
 
 This should print "Hello COMP423" into your terminal. If you see this, you successfully ran your program!
 
-You should also try running your program using the build command. "go build" makes a binary that we can execute many times, while go run compiles and runs the program in a single step.
+You should also try running your program using the build command. 'go build' makes a binary that we can execute many times, while 'go run' compiles and runs the program in a single step.
 
 ``` bash
 go build -o hello_comp
